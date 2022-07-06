@@ -2,6 +2,8 @@ from django import forms
 from .models import UserReservation
 
 
+
+
 class UserReservationForm(forms.ModelForm):
     name = forms.CharField(max_length=50,
                            widget=forms.TextInput(attrs={
@@ -13,7 +15,7 @@ class UserReservationForm(forms.ModelForm):
                             }))
 
     email = forms.CharField(max_length=50,
-                            widget=forms.TextInput(attrs={
+                            widget=forms.EmailInput(attrs={
                                     'type': 'email',
                                     'class': 'form-control',
                                     'name': 'email',
@@ -42,9 +44,16 @@ class UserReservationForm(forms.ModelForm):
 
 
 
-
-
     class Meta:
         model = UserReservation
         fields = ('name', 'phone', 'email', 'message')
+
+
+
+
+
+
+
+
+
 

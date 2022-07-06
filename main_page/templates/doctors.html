@@ -10,12 +10,12 @@
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                     <div class="member" data-aos="fade-up" data-aos-delay="100">
                         <div class="member-img">
-                            <img src="{{ doctor.photo }}" class="img-fluid" alt="">
+                            <img src="{{ doctor.photo.url }}" class="img-fluid" alt="">
                             <div class="social">
-                                <a href=""><i class="bi bi-twitter"></i></a>
-                                <a href=""><i class="bi bi-facebook"></i></a>
-                                <a href=""><i class="bi bi-instagram"></i></a>
-                                <a href=""><i class="bi bi-linkedin"></i></a>
+                                <a href='{{ doctor.twitter }}'><i class="bi bi-twitter"></i></a>
+                                <a href="{{ doctor.facebook }}"><i class="bi bi-facebook"></i></a>
+                                <a href="{{ doctor.instagram }}"><i class="bi bi-instagram"></i></a>
+                                <a href="{{ doctor.linkedin }}"><i class="bi bi-linkedin"></i></a>
                             </div>
                         </div>
                         <div class="member-info">

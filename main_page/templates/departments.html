@@ -8,28 +8,30 @@
         </div>
 
         <div class="row" data-aos="fade-up" data-aos-delay="100">
-          <div class="col-lg-4 mb-5 mb-lg-0">
-            <ul class="nav nav-tabs flex-column">
-              <li class="nav-item">
-                <a> class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1">
-                  <h4>{{ deparmtments.name }}</h4>
-                  <p>{{ deparmtments.small_desc }}</p>
-                </a>
-              </li>
-            </ul>
-          </div>
-          {% for department in departments %}
-            <div class="col-lg-8">
-            <div class="tab-content">
-              <div class="tab-pane active show" id="tab-1">
-                <h3>{{ department.name }}</h3>
-                <p class="fst-italic">{{ department.small_desc }}</p>
-                <img src={{ department.photo }} alt="" class="img-fluid">
-                <p> {{ department.desc }} </p>
+              <div class="col-lg-4 mb-5 mb-lg-0">
+                  <ul class="nav nav-tabs flex-column">
+                      {% for department in departments %}
+                          <li class="nav-item">
+                              <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-{{ department.position }}">
+                                  <h4>{{ department.name }}</h4>
+                                  <p>{{ department.small_desc }}</p>
+                              </a>
+                          </li>
+                      {% endfor %}
+                  </ul>
               </div>
+            <div class="col-lg-8">
+                <div class="tab-content">
+                    {% for x in departments %}
+                      <div class="tab-pane" id="tab-{{ x.position }}">
+                          <h3>{{ x.name }}</h3>
+                          <p class="fst-italic">{{ x.small_desc }}</p>
+                          <img src={{ x.photo.url }} alt="" class="img-fluid">
+                          <p> {{ x.desc }} </p>
+                      </div>
+                    {% endfor %}
+                </div>
             </div>
-          </div>
         </div>
-        {% endfor %}
       </div>
     </section><!-- End Departments Section -->

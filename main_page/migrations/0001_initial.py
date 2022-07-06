@@ -20,7 +20,7 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(db_index=True, max_length=50, unique=True)),
                 ('small_desc', models.TextField(blank=True, max_length=100)),
                 ('desc', models.TextField(blank=True, max_length=500)),
-                ('photo', models.ImageField(upload_to=main_page.models.Departaments.get_file_name)),
+                ('photo', models.ImageField(upload_to=main_page.models.Departaments.get_file_name2)),
                 ('is_visible', models.BooleanField(default=True)),
                 ('position', models.PositiveSmallIntegerField(unique=True)),
             ],
